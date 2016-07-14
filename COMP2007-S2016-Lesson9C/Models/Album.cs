@@ -24,6 +24,7 @@ namespace COMP2007_S2016_Lesson9C.Models
             this.Title = Title;
         }
 
+        public int AlbumID { get; set; }
         public string Title { get; set; }
         public Genre Genre { get; set; }
     }

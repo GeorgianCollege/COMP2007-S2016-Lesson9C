@@ -7,10 +7,12 @@ using COMP2007_S2016_Lesson9C.Models;
 
 namespace COMP2007_S2016_Lesson9C.Controllers
 {
+    [Authorize]
     public class StoreController : Controller
     {
         //
         // GET: /Store/
+        [AllowAnonymous]
         public ActionResult Index()
         {
             List<Genre> genres = new List<Genre>
@@ -24,6 +26,7 @@ namespace COMP2007_S2016_Lesson9C.Controllers
         }
         //
         // GET: /Store/Browse?genre=Disco
+        [AllowAnonymous]
         public ActionResult Browse(string genre)
         {
             Genre genreModel = new Genre(genre);
@@ -32,6 +35,7 @@ namespace COMP2007_S2016_Lesson9C.Controllers
         }
         //
         // GET: /Store/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int id = 1)
         {
             Album album = new Album("Album " + id);
